@@ -1,4 +1,6 @@
 # Deploy your first EC2 instance with CloudFormation
+
+### :warning: In case you need to use some other AMI or same AMI but in different region
 Currently in the `ec2-instance.yaml` template we use `ami-035b3c7efe6d061d5` AMI which exists only in `us-east-1` region. 
 
 In order to get newest AMI image for your EC2 instance in your default region run next command in your terminal:
