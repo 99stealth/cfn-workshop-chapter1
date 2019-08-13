@@ -26,7 +26,7 @@ To:
 Delete old stack from CloudFormation and start procedure again
 
 ## Verification
-Now when your stack in ```CREATE_COMPLETE``` status you may go to S3 service and check the name of your new S3 bucket
+Now when your stack in `CREATE_COMPLETE` status you may go to S3 service and check the name of your new S3 bucket
 
 ## Conclusions
 - Try to understand what has actually happened
