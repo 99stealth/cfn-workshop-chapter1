@@ -2,7 +2,7 @@
 
 As you already know using S3 as a storage for your CFn templates is a good practice since you cannot upload template with size more than `51,200 bytes` using CLI or API (more details you can find [HERE](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html)). So let's create your first resource with CloudFormation.
 
-## Enough borring talks, let's deploy
+## Enough borring talks, let's deploy :rocket:
 Try to deploy template `s3_for_cfn_templates.yaml`. If you don't know how to do that then use next tips:
 - Go to your `AWS Console`
 - Find CloudFormation in `Services` list and go to it
