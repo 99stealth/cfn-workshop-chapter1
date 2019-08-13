@@ -1,0 +1,5 @@
+Resources:
+  s3BucketForCfnTemplates:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: 'cfn-templates'
