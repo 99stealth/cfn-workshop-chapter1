@@ -20,4 +20,32 @@ _________________
 Now when your stack in `CREATE_COMPLETE` status go to `EC2` console and check that your instance is on its place.
 Now when instance is created you may find its IP address and try to connect to it. Ah, hold on, but you don't have a `ssh key`.
 
-## Let's work with Parameters
+## Let's fix the SSH Key issue and work with Parameters in the meantime
+1. You need to have already existing SSH key
+2. Now open `ec2-instance.yaml` and add `Parameters` section with next content on the top of template
+```yaml
+  SSHKey:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Choose a SSH key from the list of your keys
+    ConstraintDescription: This field cannot be empty
+```
+3. Also, you need to specify where you want to use parameter `SSHKey`. In our case we use it with single instance. So, add next line to the end of `EC2Instance` resource
+```yaml
+      KeyName: !Ref SSHKey
+```
+4. Now you can update CloudFormation stack. 
+   - Go to CloudFormation console
+   - Choose stack and press `Update` button
+   - Find the `ec2-instance.yaml` template on your computer
+   - Go Next -> Next -> Next... :)
+5. If you see status `UPDATE_COMPLETE` then you can go to the EC2 console, get instance IP address and try to connect to an instance via SSH.
+
+## Follow-up activities
+1. Check other parameters which you can use with [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html) resource
+2. Add UserData to your instance which will install
+   - git
+   - go
+   - htop
+3. Add Parameter which will allow you to choose `InstanceType` between `t2.micro, t2.small, t3.micro, t2.small`
+4. Add Parameter which will allow you to choose VPC and Subnet where to deploy an instance
+5. Add `Mapping` section with AMI maps for each AWS Region.
