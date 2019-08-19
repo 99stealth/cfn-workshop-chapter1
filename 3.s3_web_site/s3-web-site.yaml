@@ -1,0 +1,28 @@
+Parameters:
+  SiteName:
+    Type: String
+    Description: Your site name
+Resources:
+  S3BucketWeb:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref SiteName
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+  S3WebBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties: 
+      Bucket: !Ref S3BucketWeb
+      PolicyDocument: !Sub '{
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "PublicReadGetObject",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::${SiteName}/*"
+        }
+      ]
+    }'
