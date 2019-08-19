@@ -34,5 +34,3 @@ Now when your stack in `CREATE_COMPLETE` status you may go to S3 service and che
   - Pseudo functions
   - Intrinsic functions
   - Condition functions
-
-!!! ADD RETAIN
