@@ -1,5 +1,6 @@
 Resources:
   s3BucketForCfnTemplates:
     Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
     Properties:
       BucketName: 'cfn-templates'
