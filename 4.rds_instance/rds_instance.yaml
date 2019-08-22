@@ -1,0 +1,21 @@
+Resources:
+  MySqlDbSecurityGroup:
+    Type: AWS::RDS::DBSecurityGroup
+    Properties:
+      GroupDescription: Connect to MySQL DB
+      DBSecurityGroupIngress:
+        -
+          CIDRIP: 0.0.0.0/0
+  MySqlDB:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage: "16"
+      DBInstanceClass: db.t3.small
+      Engine: MySQL
+      EngineVersion: "5.7.22"
+      StorageType: gp2
+      MasterUsername: root
+      MasterUserPassword: 5ecretPa$$word
+      DBSecurityGroups :
+        -
+          !Ref MySqlDbSecurityGroup
