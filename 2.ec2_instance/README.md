@@ -44,7 +44,7 @@ Now when instance is created you may find its IP address and try to connect to i
 1. Check other parameters which you can use with [AWS::EC2::Instance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html) resource
 2. Add UserData to your instance which will install
    - git
-   - go
+   - golang
    - htop
 3. Add Parameter which will allow you to choose `InstanceType` between `t2.micro, t2.small, t3.micro, t2.small`
 4. Add Parameter which will allow you to choose VPC and Subnet where to deploy an instance
