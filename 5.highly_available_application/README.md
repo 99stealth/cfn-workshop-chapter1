@@ -1,5 +1,5 @@
 # Let's wrap it up
-We already deployed such resources  as:
+We already deployed such resources as:
 - S3 Buckets
 - EC2 Instance
 - RDS Instance
@@ -7,7 +7,7 @@ We already deployed such resources  as:
 But that's not enough for highly available applications.
 
 ![CFN Workshop Infrastructure](.img/infrastructure-overview.png)
-Ok, let's pull all the stuff together and create something great.
+Ok, let's pull all the stuff together and create something really great.
 
 ## Follow-up activities
 There are two more repositories which are created for this workshop:
