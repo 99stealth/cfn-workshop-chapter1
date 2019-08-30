@@ -15,6 +15,10 @@ In case you want to get AMI for different region just specify `--region` flag in
 ```
 aws ec2 describe-images --region us-west-1 --owners amazon --filters 'Name=name,Values=amzn-ami-hvm-????.??.?.????????-x86_64-gp2' 'Name=state,Values=available' --output json | jq -r '.Images | sort_by(.CreationDate) | last(.[]).ImageId'
 ```
+In order to get AMI IDs for all regions run next code snippet in your terminal
+```
+for aws_region in us-east-1 us-east-2 us-west-1 us-west-2 eu-west-1 eu-west-2 eu-west-3 eu-central-1 eu-north-1 ap-northeast-2 ap-northeast-1 ap-southeast-2 ap-southeast-1 ca-central-1 ap-south-1 sa-east-1; do image_id=$(aws ec2 describe-images --region $aws_region --owners amazon --filters 'Name=name,Values=amzn-ami-hvm-????.??.?.????????-x86_64-gp2' 'Name=state,Values=available' --output json | jq -r '.Images | sort_by(.CreationDate) | last(.[]).ImageId'); echo $aws_region $image_id; done
+```
 _________________
 ## Let's check the instance
 Now when your stack in `CREATE_COMPLETE` status go to `EC2` console and check that your instance is on its place.
