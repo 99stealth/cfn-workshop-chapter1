@@ -9,6 +9,7 @@ But that's not enough for highly available applications.
 ![CFN Workshop Infrastructure](.img/infrastructure-overview.png)
 Ok, let's pull all the stuff together and create something really great.
 
+![Security Groups Schema](.img/security-groups-schema.png)
 ## Follow-up activities
 There are two more repositories which are created for this workshop:
 - [Golang backend application](https://github.com/99stealth/cfn-workshop-backend)
@@ -31,8 +32,11 @@ Now your final task sounds like:
    -  Build Golang application and run it. Snippet of code which does it is [HERE](UserData.sh)   
    - Extend the UserData by checking that DB exists. If it does then nothing to do otherwise it should create DB `cfn_workshop` and table `user`
    - Extend the UserData by getting files from [Frontend application](https://github.com/99stealth/cfn-workshop-frontend). Change `127.0.0.1:8000` by LoadBalancer hostname and put them to S3 bucket.
-
 8. Website's link should be available in the `Output` of stack
+
+TODO:
+- Metadata
+- Mapping
 
 ## How to verify that application works in a right way
 1. Go to the web page and fill the form
