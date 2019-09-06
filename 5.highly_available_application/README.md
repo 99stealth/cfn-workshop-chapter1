@@ -7,7 +7,6 @@ We already deployed such resources as:
 But that's not enough for highly available applications.
 Ok, let's pull all the stuff together and create something really great.
 
-![Security Groups Schema](.img/security-groups-schema.png)
 ## Follow-up activities
 There is one more repository which is created for this workshop:
 - [Golang backend application](https://github.com/99stealth/cfn-workshop-backend)
@@ -53,6 +52,8 @@ Now your final task sounds like:
 - You are allowed to connect to application only via LoadBalancer which is listening on port 80
 - You are allowed to connect to instances only from one IP address
 - Connection to application is allowed only from ELB's Security Group
+
+![Security Groups Schema](.img/security-groups-schema.png)
 
 ## How to verify that application works in a right way
 1. Open your terminal and run
