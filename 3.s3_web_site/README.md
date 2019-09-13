@@ -68,3 +68,8 @@ aws s3 sync . s3://${BUCKET_NAME} --exclude ".git/*"
 
 ## Follow-up activities
 1. Parametrize `IndexDocument` and `ErrorDocument` using `AllowedPattern`
+2. Add Parameter `Environment` with 3 allowed values `production`, `staging`, `development`. Add the environment to the beginning of the `BucketName`
+3. Create `Fn::If` statement for development, staging, production environments
+   - If `Environment` is `production` it should be reachable from anywhere
+   - If `Environment` is `staging` it should be reachable only from your IP address
+   - If `Environment` is `development` it should not be deployed at all
