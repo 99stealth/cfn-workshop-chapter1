@@ -46,7 +46,7 @@ Outputs:
     Value: !GetAtt [S3BucketWeb, WebsiteURL]
     Description: URL for website hosted on S3
   S3BucketSecureURL:
-    Value: !Join ['', ['https://', !GetAtt [S3Bucket, DomainName]]]
+    Value: !Join ['', ['https://', !GetAtt [S3BucketWeb, DomainName]]]
     Description: Name of S3 bucket to hold website content
 ```
 
